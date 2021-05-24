@@ -1,0 +1,94 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<div class="gridListing">
+    <div class="gridListingImage">{% if listing.image %}<img src={{listing.image}} />{% endif %}</div>
+    <div class="gridListingTitel"><a class="link-dark" href="{% url 'listingPage' listing.id %}">{{listing.item}}</a>
+    </div>
+    <div class="gridListingDescription">{{listing.description}}</div>
+    <div class="gridListingPrice">
+        <div>
+            <p class="highestBid">€{{listing.highestBid}}</p>
+            <p class="sold">
+                {% if listing.active %}
+                Still ongoing!
+                {% else %}
+                Sold!
+                {% endif %}
+            </p>
+        </div>
+
+
+        {% if user.is_authenticated %}
+        {% if listing.active %}
+        <form class="bidForm" method="POST">
+            <div>
+                {% csrf_token %}
+                {{ form.bid }}
+                <h3>{% if message %}{{ message }}{% endif %}</h3>
+            </div>
+            <div>
+                <input class="btn btn-primary" id="Bid" type="submit" value="Place Bid" />
+            </div>
+        </form>
+        <div class="watchlist _22 ">
+            <form method="POST">
+                {% if user == listing.creator %}
+                {% csrf_token %}
+                <button class="btn btn-primary right" name="closeAuction" type="submit" value="close">Close
+                    Auction</button>
+                {% endif %}
+            </form>
+
+            <form method="POST">
+                {% csrf_token %}
+                {% if watchlist %}
+
+                <button class="btn btn-secondary right" name="removeWatchlist" type="submit" value="remove"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                    </svg> Watchlist</button>
+                {% else %}
+                <span class="vi-atw-icn"></span>
+                <button class="btn btn-secondary right" name="addWatchlist" type="submit" value="add"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart" viewBox="0 0 16 16">
+                        <path
+                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
+                    </svg> Watchlist</button>
+
+                {% endif %}
+            </form>
+        </div>
+        <div>
+            {% elif user == highestBid.user %}
+            <h2>You have won the auction!</h2>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+
+{% if user.is_authenticated %}
+<div class="commentSection">
+    <form method="POST" class="formGrid">
+        <div>{% csrf_token %}{{commentForm.text}}</div>
+        <div class="formButton"><button class="btn btn-primary _12" id="comment" name="comment" type="submit"
+                value="comment">Comment</button></div>
+    </form>
+</div>
+{% endif %}
+{% for comment in comments %}
+<div class="commentGrid">
+    <div class="commentUser">{{comment.user}}</div>
+    <div class="commentText">{{comment.text}}</div>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}

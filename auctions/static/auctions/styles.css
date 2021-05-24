@@ -1,0 +1,303 @@
+body {
+    padding: 10px;
+    background: url(website-background-pattern.jpg) repeat 0 0;
+    font-family: helvetica;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: garamond;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 10px;
+    justify-self: center;
+    align-self: center;
+}
+
+.link-dark {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.sold {
+    font-size: 16px;
+    color: grey;
+    font-weight: normal;
+}
+
+#Bid {
+    margin-left: 50px;
+    height: 30px;
+    top: 5px;
+    padding: 1px 8px;
+}
+
+.highestBid {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.watchlist {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+}
+
+.category {
+    margin-left: 30px;
+}
+
+.create {
+    margin: 10px;
+}
+
+#createButton {
+    margin-left: 130px;
+}
+
+#id_item {
+    border-radius: 10px;
+    padding: 1px 8px;
+    border-color: gray;
+    border-bottom-color: darkblue;
+    border-right-color: blue;
+    border-style: solid;
+}
+
+#id_item:focus {
+    outline: none;
+}
+
+#id_bid {
+    border-radius: 10px;
+    padding: 1px 8px;
+    border-bottom-color: darkblue;
+    border-right-color: blue;
+    border-top-color: gray;
+    border-style: solid;
+}
+
+#id_bid:focus {
+    outline: none;
+}
+
+#id_description {
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 1px 8px;
+    border-bottom-color: darkblue;
+    border-right-color: blue;
+    border-top-color: gray;
+    border-style: solid;
+}
+
+#id_description:focus {
+    outline: none;
+}
+
+#id_category {
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 1px 8px;
+    border-top-color: gray;
+    border-bottom-color: darkblue;
+    border-right-color: blue;
+    height: 30px;
+    width: 195px;
+    border-style: solid;
+}
+
+#id_category:focus {
+    outline: none;
+}
+
+#id_image {
+    border-radius: 10px;
+    padding: 1px 8px;
+    border-bottom-color: darkblue;
+    border-right-color: blue;
+    border-top-color: gray;
+    border-style: solid;
+}
+
+#id_image:focus {
+    outline: none;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.grid {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(10, 192px);
+    grid-template-rows: repeat(5, 50px);
+    border-width: 1px;
+    border-color: lightgrey;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.gridImage {
+    display: grid;
+    grid-column: 2 / 4;
+    grid-row: 1 / 6;
+    justify-content: center;
+    align-content: center;
+}
+
+.gridTitel {
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: lightgrey;
+    border-style: solid;
+    border-radius: 5px;
+    grid-column: 4 / 8;
+    grid-row: 1 / 2;
+}
+
+.gridDescription {
+    grid-column: 5 / 8;
+    grid-row: 3 / 6;
+    color: gray;
+    font-family: garamond,
+}
+
+.gridPrice {
+    grid-column: 4 / 5;
+    grid-row: 3 / 6;
+}
+
+.gridListing {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(12, 50px);
+}
+
+.gridListingImage {
+    display: grid;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-style: solid;
+    border-radius: 5px;
+    grid-column: 2 / 4;
+    grid-row: 3 / 11;
+    justify-content: center;
+    align-content: center;
+}
+
+.gridListingTitel {
+    padding: 10px;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: lightgrey;
+    border-style: solid;
+    grid-column: 4 / 8;
+    grid-row: 3 / 4;
+}
+
+.gridListingDescription {
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-color: lightgrey;
+    border-style: solid;
+    grid-column: 4 / 8;
+    grid-row: 4 / 7;
+    color: gray;
+    padding: 10px;
+}
+
+.gridListingPrice {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    grid-column: 4 / 8;
+    grid-row: 7 / 11;
+    padding: 10px;
+}
+
+.bidForm {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    padding: 10px;
+}
+
+._22 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+._12 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.darkblue {
+    color: darkblue;
+    font-family: garamond;
+    font-size: 24px;
+}
+
+.commentSection {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(10, 192px);
+    grid-template-rows: repeat(2, 50px);
+}
+
+.formGrid {
+    display: grid;
+    grid-column: 3 / 8;
+    grid-row: 1 / 2;
+    grid-template-columns: 70% 20%;
+}
+
+.commentGrid {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(10, 192px);
+}
+
+.commentText {
+    grid-row: 2;
+    grid-column: 3 / 8;
+}
+
+.commentUser {
+    font-weight: bold;
+    grid-row: 1;
+    grid-column: 3 / 8;
+}
+
+.formButton {
+    align-self: center;
+}
+
+#id_text {
+    border-width: 1px;
+    background-color: #f9f9ff;
+    border-color: lightblue;
+    border-radius: 5px;
+}
+
+#id_text:focus {
+    outline: none;
+}
+
+label {
+    font-family: garamond;
+    justify-self: end;
+    font-size: 20px;
+}
+
+.createGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 20%);
+    grid-template-rows: repeat(6, 100px);
+    padding: 10px;
+    align-items: center;
+}

@@ -1,0 +1,22 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2>Create Listing</h2>
+
+<form class="createGrid" method="POST">
+    <label>Item Title:</label>
+    <div class="create">{{form.item}} </div>
+    <label>Description:</label>
+    <div class="create">{{form.description}} </div>
+    <label>Image URL:</label>
+    <div class="create">{{form.image}} </div>
+    <label>Catagory:</label>
+    <div class="create">{{form.category}} </div>
+    <label>Starting Bid:</label>
+    <div class="create">{{bidForm.bid}}</div>
+    {% csrf_token %}
+    <label></label>
+    <div id="createButton"><input class="btn btn-primary" type="submit" value="Create" /></div>
+</form>
+
+{% endblock %}

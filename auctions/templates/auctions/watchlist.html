@@ -1,0 +1,23 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<h2>Watchlist</h2>
+
+{% for listing in watchlist %}
+<div class="grid">
+    <div class="gridImage">{% if listing.item.image %}<img src={{listing.item.image}} />{% endif %}</div>
+    <div class="gridTitel"><a class="link-dark" href="{% url 'listingPage' listing.item.id %}">{{listing.item.item}}</a>
+    </div>
+    <div class="gridDescription">{{listing.item.description}}</div>
+    <div class="gridPrice">
+        <p class="highestBid">€{{listing.item.highestBid}}</p>
+        {% if listing.item.active %}
+        <p class="sold">Still ongoing!</p>
+        {% else %}
+        <p class="sold">Sold!</p>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
